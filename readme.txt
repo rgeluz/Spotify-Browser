@@ -1,4 +1,7 @@
 --Readme document for *author(s)*, *email(s)*, *UCI id(s)*--
+author: Roman Geluz
+email: geluzr@uci.edu
+date started: 11/16/2019
 
 1. How many assignment points do you believe you completed (replace the *'s with your numbers)?
 

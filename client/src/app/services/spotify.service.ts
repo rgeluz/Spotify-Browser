@@ -19,7 +19,12 @@ export class SpotifyService {
     //TODO: use the injected http Service to make a get request to the Express endpoint and return the response.
     //the http service works similarly to fetch(). It may be useful to call .toPromise() on any responses.
     //update the return to instead return a Promise with the data from the Express server
-    return Promise.resolve();
+
+    let res = this.http.get(this.expressBaseUrl);
+    /*res.toPromise().then((data)=>{ 
+      console.log(data);
+    });*/
+    return Promise.resolve(res.toPromise()); 
   }
 
   aboutMe():Promise<ProfileData> {
@@ -34,6 +39,9 @@ export class SpotifyService {
     //Make sure you're encoding the resource with encodeURIComponent().
     //Depending on the category (artist, track, album), return an array of that type of data.
     //JavaScript's "map" function might be useful for this, but there are other ways of building the array.
+    /*return this.sendRequestToExpress('').then((data) => {
+      return new 
+    });*/
     return null;
   }
 

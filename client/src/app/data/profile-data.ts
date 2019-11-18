@@ -9,7 +9,8 @@ export class ProfileData {
 		if(objectModel['images'].length > 0) {
 			this.imageURL = objectModel['images'][0].url;
 		} else {
-			this.imageURL = '../../assets/unknown.jpg';
+			//this.imageURL = '../../assets/unknown.jpg';
+			this.imageURL = '../../assets/Roman.jpg';
 		}
 	}
 }

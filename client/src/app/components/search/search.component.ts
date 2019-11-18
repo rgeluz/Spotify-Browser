@@ -17,6 +17,7 @@ export class SearchComponent implements OnInit {
   searchCategories:string[] = ['artist', 'album', 'track'];
   resources:ResourceData[];
 
+
   constructor(private spotifyService:SpotifyService) { console.log('search.component.ts constructor()'); }
 
   ngOnInit() {
@@ -29,9 +30,20 @@ export class SearchComponent implements OnInit {
     //TODO: call search function in spotifyService and parse response
     this.spotifyService.searchFor(this.searchCategory,this.searchString).then((data)=>{
       console.log('inside search()');
-      if(data){ console.log("I have something in data"); } else { console.log("nothing here in data"); }
+      if(data){ console.log("I have something in searchFor data"); console.log(data);} else { console.log("nothing here in searchFordata"); }
+      /*if(this.searchCategory=='track'){
+        this.tracks = data['tracks']['items'].map( (track)=> {
+          return new TrackData(data);
+        });
+        if(this.tracks){console.log(this.tracks);} else { console.log('nothing here in tracks');}
+      } else {
+        
+      }*/
+
       this.resources = data;
       if(this.resources){ console.log('I have something in this.resources'); } else { console.log('I have nothing in this.resources'); }
+      
+      
     });
 
 

@@ -5,14 +5,14 @@
 			<th scope="col">Track</th>
 			<th scope="col">Duration</th>
 			<!--TODO: Use *ngIf to hide if hideArtist is true-->
-			<th scope="col">Primary Artist</th>
+			<th scope="col" *ngIf="hideArtist">Primary Artist</th>
 			<!--TODO: Use *ngIf to hide if hideAlbum is true-->
-			<th scope="col">Album</th>
+			<th scope="col" *ngIf="hideAlbum">Album</th>
 		</tr>
 	</thead>
 	<tbody>
 		<!--TODO: Use *ngFor to loop over tracks-->
-		<tr>
+		<tr *ngFor="let track of tracks">
 			<!--TODO: Populate with row index (start with 1!)-->
 			<td>???</td>
 			<td>

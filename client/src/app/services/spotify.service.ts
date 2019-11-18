@@ -140,8 +140,8 @@ export class SpotifyService {
     return this.sendRequestToExpress(`/album-tracks/${albumId}`).then((data) => {
       if(data){ console.log("I have something in getTracksForAlbum data"); console.log(data); } else { console.log("nothing here in data");} 
       let trackData: TrackData[];
-      trackData = data['tracks']['items'].map( (track)=> {
-        return new TrackData(data);
+      trackData = data['items'].map( (track)=> {
+        return new TrackData(track);
       });
       if(trackData) {console.log(trackData);} else {console.log('nothing here in trackData');}
       return trackData;

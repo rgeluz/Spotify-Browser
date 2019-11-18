@@ -7,7 +7,7 @@
 		<img id="artistImg" [src]="artistImage">
 		<p>
 			<!--TODO: link to artist page on spotify, display artist name-->
-			<a class="btn btn-light" role="button" target="_blank">Open {{artist.name}} on Spotify</a>
+			<a class="btn btn-light" role="button" target="_blank" [href]="artist.url">Open {{artist.name}} on Spotify</a>
 		</p>
 	</div>
 	<div class="col-2">

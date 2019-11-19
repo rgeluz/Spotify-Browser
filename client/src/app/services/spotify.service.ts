@@ -82,6 +82,7 @@ export class SpotifyService {
   }
 
   getRelatedArtists(artistId:string):Promise<ArtistData[]> {
+    console.log('getRelatedArtists()');
     //TODO: use the related artist endpoint to make a request to express and return an array of artist data.
     return this.sendRequestToExpress(`/artist-related-artists/${artistId}`).then((data) => {
       if(data){ console.log("I have something in getRelatedArtist data"); console.log(data); } else { console.log("nothing here in data");} 
@@ -158,15 +159,27 @@ export class SpotifyService {
     //return null;
   }
 
-  /*getAudioFeaturesForTrack(trackId:string):Promise<TrackFeature[]> {
+  getAudioFeaturesForTrack(trackId:string):Promise<TrackFeature[]> {
+    console.log('getAudioFeaturesForTrack()');
     //TODO: use the audio features for track endpoint to make a request to express.
     return this.sendRequestToExpress(`/track-audio-features/${trackId}`).then((data) => {
-      let trackFeature: TrackFeature[];
-      trackFeature = data.map( (feature)=>{
-        return new TrackFeature(data);
-      });
+      if(data){ console.log("I have something in getAudioFeaturesForTrack data"); console.log(data); } else { console.log("nothing here in data");} 
+      let trackFeature:TrackFeature[]=[];
+      trackFeature.push(new TrackFeature('acousticness',data['acousticness'])); 
+      trackFeature.push(new TrackFeature('danceability',data['danceability']));
+      trackFeature.push(new TrackFeature('energy',data['energy']));
+      trackFeature.push(new TrackFeature('instrumentalness',data['instrumentalness']));
+      trackFeature.push(new TrackFeature('liveness',data['liveness']));
+      //trackFeature.push(new TrackFeature('loudness',data['loudness']));
+      trackFeature.push(new TrackFeature('speechiness',data['speechiness']));
+      trackFeature.push(new TrackFeature('valence',data['valence']));
+      //trackFeature.push(new TrackFeature('tempo',data['tempo']));
+      /*trackFeature = data.map( (feature)=>{
+        return new TrackFeature(feature);
+      });*/
+      if(trackFeature){console.log(trackFeature);}else{console.log('nothing here in trackfeature');}
       return trackFeature;
     });
     //return null;
-  }*/
+  }
 }

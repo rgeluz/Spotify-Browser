@@ -1,3 +1,14 @@
+
+//To run client
+cd into client folder
+run 'ng serve --open'	//this will open a browser to localhost:4200
+
+//To run web server
+cd into web server folder
+run 'npm start'		//open a browser to localhost:8888
+
+
+
 --Readme document for *author(s)*, *email(s)*, *UCI id(s)*--
 author: Roman Geluz
 email: geluzr@uci.edu
